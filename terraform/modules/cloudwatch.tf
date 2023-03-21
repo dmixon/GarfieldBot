@@ -1,7 +1,7 @@
 resource "aws_cloudwatch_event_rule" "garfield_daily" {
   name                = "daily"
-  description         = "Fires at 9 AM EST each day"
-  schedule_expression = "cron(0 14 * * ? *)" #this is 9 AM, currently using EST
+  description         = "Fires at 9 AM - currently using ${var.savings_time_notation}"
+  schedule_expression = "cron(0 ${var.hour} * * ? *)" #this is 9 AM, either in EST or EDT
 }
 
 resource "aws_cloudwatch_event_target" "garfield_target" {

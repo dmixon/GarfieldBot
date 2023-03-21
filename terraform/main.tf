@@ -1,6 +1,8 @@
 module "garfield-infra" {
   source                      = "./modules"
   bucket_name                 = "discord-garfield-code"
+  hour                        = "13"
+  savings_time_notation       = "EDT"
 }
 
 terraform {
